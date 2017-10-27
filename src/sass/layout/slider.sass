@@ -1,0 +1,228 @@
+@import "../misc/_mixin.sass"
+@import "../fonts/fonts.css"
+
+$container-width: 100%
+$main-font: 'Poppins Bold', sans-serif
+$small-font: 'Poppins Semibold', sans-serif
+
+*
+	box-sizing: border-box
+
+html, body
+	margin: 0
+	padding: 0
+
+h1, h2, h3, h4, h5, h6, p, ul, li
+	margin: 0
+	padding: 0
+
+ul
+	list-style: none
+
+a
+	text-decoration: none
+	color: inherit
+
+.container
+	width: $container-width
+	margin: 0 auto
+
+	@include media(730px)
+		padding: 15px
+
+.maincontent
+	padding-bottom: 130px
+
+	@include media(420px)
+		padding-bottom: 50px
+
+.title-wrap
+	margin: 50px auto 0
+	text-align: center
+	text-transform: uppercase
+	max-width: 1170px
+	position: relative
+
+	@include media(420px)
+		margin-top: 30px
+
+.title-wrap:before
+	content: ''
+	display: block
+	width: 44px
+	height: 44px
+	background: url(../img/triangle.png)
+	position: absolute
+	left: -20px
+	bottom: 80px
+	z-index: -1
+
+	@include media(1220px)
+		left: 0
+	
+	@include media(1190px)
+		left: 76px
+		bottom: 30px
+
+	@include media(880px)
+		bottom: -40px
+
+	@include media(660px)
+		display: none
+
+.title-wrap:after
+	content: ''
+	display: block
+	width: 30px
+	height: 30px
+	background: url(../img/plus.png)
+	position: absolute
+	right: 140px
+	top: -30px
+
+	@include media(520px)
+		display: none
+
+.title
+	font-family: $small-font
+	@include rem(18)
+	font-weight: normal
+	letter-spacing: .2rem
+
+.desc
+	font-family: $main-font
+	@include rem(86)
+	line-height: 1.05
+	margin-top: 20px
+
+	@include media(1190px)
+		@include rem(80)
+
+	@include media(1090px)
+		@include rem(60)
+
+	@include media(790px)
+		@include rem(50)
+
+	@include media(660px)
+		@include rem(40)
+
+	@include media(520px)
+		@include rem(30)
+
+	@include media(420px)
+		@include rem(24)
+
+.slider
+	margin-top: 90px
+	padding-left: 20px
+
+	@include media(730px)
+		padding-left: 0
+
+	@include media(660px)
+		margin-top: 50px
+
+	@include media(420px)
+		margin-top: 30px
+
+.slider__list
+	padding-left: 116px
+
+	@include media(730px)
+		padding-left: 0
+
+.slider__item
+	width: 440px
+	margin-right: 45px
+	position: relative
+	font-size: 0
+	overflow: hidden
+	opacity: .3
+
+	@include media(650px)
+		width: 300px
+
+	img
+		@include media(650px)
+			width: 300px
+
+.slider__link
+	width: inherit
+
+.slider__item-overlay
+	width: 100%
+	height: 100%
+	background: rgba(27, 241, 173, 0)
+	position: absolute
+	top: 0
+	left: 0
+	transition: background .3s
+
+.slider__item:hover .slider__item-overlay
+	background: rgba(27, 241, 173, .9)
+
+.slider__item-desc
+	text-transform: uppercase
+	letter-spacing: .2rem
+	color: #fff
+	position: absolute
+	max-width: inherit
+	left: 30px
+	bottom: -50%
+	transition: bottom .5s
+
+.slider__item:hover .slider__item-desc
+	bottom: 30px
+
+.slider__item-title
+	font-family: $main-font
+	@include rem(28)
+	font-weight: normal
+	max-width: 320px
+
+.slider__item-author
+	font-family: $small-font
+	@include rem(12)
+	margin-top: 14px
+
+.slider__arr
+	width: 96px
+	height: 96px
+	padding: 0
+	border: none
+	outline: none
+	cursor: pointer
+	position: absolute
+	top: 50%
+	transform: translate(0, -50%)
+	opacity: .6
+	transition: opacity .2s
+
+	&:hover
+		opacity: 1
+	
+	@include media(730px)
+		width: 50px
+		height: 50px
+
+.slider__arr--prev
+	background: url(../img/arrow-prev.png) no-repeat
+	background-size: cover
+	left: 0
+	z-index: 99
+
+	@include media(730px)
+		left: 20px
+
+	@include media(500px)
+		left: 0
+
+.slider__arr--next
+	background: url(../img/arrow-next.png) no-repeat
+	background-size: cover
+	right: 20px
+
+	@include media(500px)
+		right: 0
+
